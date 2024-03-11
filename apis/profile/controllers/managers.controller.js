@@ -22,10 +22,10 @@ export const registerManagerController = async (req, res, next) => {
     // Invoke service
     try {
         const managerData = req.body
-        const coder = await registerManagerService(managerData)
+        const manager = await registerManagerService(managerData)
         return res.status(201).json({
             status: 'success',
-            data: coder
+            data: manager
         })
     } catch(error) {
         return errorFilter(res, error)
