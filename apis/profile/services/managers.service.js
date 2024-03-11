@@ -1,6 +1,7 @@
 import { Manager } from "../models/Manager.js"
 import bcrypt from 'bcrypt'
 import jwt from 'jsonwebtoken'
+import { roles } from "../../middlewares/auth/roles.js"
 
 export const getManagerProfileService = async (managerId) => {
     // TODO: Implement get manager service
@@ -41,6 +42,7 @@ export const loginManagerService = async ({manager_name, password}) => {
     const token = jwt.sign({
       id: manager._id,
       name: manager_name,
+      role: roles.Manager
     }, 'secret', {
       expiresIn: 36000
     })
