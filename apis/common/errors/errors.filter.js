@@ -1,6 +1,7 @@
 import { CodeGroundError } from "./errors.js";
 
 export function errorFilter(response, error) {
+    console.error(error)
     if (error instanceof CodeGroundError) {
       // Custom error handling for known errors
       response.status(error.status).json({

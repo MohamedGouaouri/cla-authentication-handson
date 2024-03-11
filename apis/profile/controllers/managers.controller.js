@@ -43,6 +43,7 @@ export const loginManagerController = async (req, res, next) => {
             data: token
         })
     } catch(error) {
+        console.log(error)
         return errorFilter(res, error)
     }
 }
