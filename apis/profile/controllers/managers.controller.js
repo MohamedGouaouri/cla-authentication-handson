@@ -1,5 +1,5 @@
 import { errorFilter } from "../../common/errors/errors.filter.js"
-import { getManagerProfileService, loginManagerService } from "../services/managers.service.js"
+import { getManagerProfileService, loginManagerService, registerManagerService } from "../services/managers.service.js"
 
 
 export const getManagerProfileController = async (req, res, next) => {
@@ -22,7 +22,7 @@ export const registerManagerController = async (req, res, next) => {
     // Invoke service
     try {
         const managerData = req.body
-        const coder = await registerCoderService(managerData)
+        const coder = await registerManagerService(managerData)
         return res.status(201).json({
             status: 'success',
             data: coder

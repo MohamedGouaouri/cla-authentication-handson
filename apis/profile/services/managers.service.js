@@ -1,6 +1,6 @@
 
 export const getManagerProfileService = async (managerId) => {
-    // TODO: Implement get managers service
+    // TODO: Implement get manager service
 }
 
 export const registerManagerService = async () => {

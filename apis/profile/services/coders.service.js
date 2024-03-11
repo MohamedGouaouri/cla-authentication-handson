@@ -42,7 +42,6 @@ export const loginCoderService = async ({ coder_name, password }) => {
     const token = jwt.sign({
       id: coder._id,
       coder_name: coder_name,
-      role: roles.Coder,
     }, 'secret', {
       expiresIn: 36000
     })

@@ -6,7 +6,7 @@ export const getCoderController = async (req, res, next) => {
     // Validate request
     // Invoke service
     try {
-        const coderId = req.user
+        const coderId = req.user.id
         const coder = await getCoderService(coderId)
         return res.json({
             status: 'success',
